@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DoctorApp</string>
+    <string name="check">I have read and agree to the <u>privacy policy</u> &amp;
+        <u>terms 0f services</u>, including our <u>Cooking Use</u></string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="verification">Verification Code</string>
+    <string name="change">Not Your Number? <u>Change</u></string>
+    <string name="resend">OTP Auto resend in 29 sec</string>
+</resources>
