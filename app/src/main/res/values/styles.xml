@@ -14,7 +14,13 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme1" parent="Theme.MaterialComponents.Light.NoActionBar"/>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Widget.MyApp.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+
+<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.MyApp.Chip.Choice</item>-->
+    </style>
 
 </resources>

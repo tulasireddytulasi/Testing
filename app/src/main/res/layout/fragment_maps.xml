@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.maps.MapsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/searchbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/location"
+            android:drawableEnd="@drawable/search"
+            android:hint="@string/search"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/searc_bg"/>
+
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search by specialization or service Eg. 'Oncologist' "
+            android:textColor="@color/lightblack"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="2dp"
+            android:textSize="10sp"
+            android:layout_below="@+id/searchbar"/>
+
+
+                <HorizontalScrollView
+                    android:id="@+id/Horizontalview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:clipToPadding="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_below="@+id/txt">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="true"
+                        android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="@string/doctors"
+                        android:background="@drawable/btn_bg"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"
+                        android:textSize="10sp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="@string/hospitals"
+                        android:background="@drawable/btn_bg"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"
+                        android:textSize="10sp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_bg"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"
+                        android:textSize="10sp"
+                        android:text="@string/labs"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_bg"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"
+                        android:textSize="10sp"
+                        android:text="@string/parmaciticals"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_bg"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"
+                        android:textSize="10sp"
+                        android:text="Medicine"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:background="@drawable/btn_bg"
+                            android:layout_margin="5dp"
+                            android:textStyle="bold"
+                            android:textSize="10sp"
+                            android:text="@string/medical_shops"/>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/Horizontalview"
+            android:layout_marginTop="20dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    </RelativeLayout>
+
+</FrameLayout>

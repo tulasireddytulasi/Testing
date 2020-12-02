@@ -8,21 +8,32 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.doctorapp.ui.home.HomeFragment"
+        android:label=""
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.doctorapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_home"
+        android:label=""
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.doctorapp.ui.slideshow.SlideshowFragment"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow"
+        android:label="My Services"/>
 
     <fragment
         android:id="@+id/chat"
         android:name="com.example.doctorapp.ui.ChatFragment"
+        android:label=""
         tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.doctorapp.ui.maps.MapsFragment"
+        android:label="Book Appointment"
+        tools:layout="@layout/fragment_maps" />
+
+
 </navigation>

@@ -68,7 +68,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
                 app:lineColor="@color/line"
-                android:itemBackground="@color/border"
+                android:itemBackground="@color/lightpink"
                 style="@style/PinWidget.PinView"
                 android:inputType="number"
                 android:cursorVisible="true"

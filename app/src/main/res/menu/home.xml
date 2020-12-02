@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/notification"
         android:orderInCategory="100"
         android:icon="@drawable/notifications"
         android:title="@string/action_settings"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 </menu>

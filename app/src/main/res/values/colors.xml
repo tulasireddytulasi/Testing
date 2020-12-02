@@ -5,8 +5,9 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#FFFFFF</color>
     <color name="pink">#7D2B7D</color>
-    <color name="border">#FBF6FC</color>
+    <color name="lightpink">#FBF6FC</color>
     <color name="line">#FAF1FA</color>
     <color name="black">#000</color>
+    <color name="lightblack">#AFA8A8</color>
 
 </resources>

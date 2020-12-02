@@ -25,4 +25,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chat">Ask Karkinos</string>
     <string name="upcoming_events">UPCOMING EVENTS</string>
+    <string name="text">Choose the services you wish to avail, or Ask Karkinos</string>
+    <string name="search">Search</string>
+    <string name="hospitals">Hospitals</string>
+    <string name="doctors">Doctors</string>
+    <string name="labs">Labs</string>
+    <string name="parmaciticals">Parmaciticals</string>
+    <string name="medical_shops">Medical Shops</string>
 </resources>
