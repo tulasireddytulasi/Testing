@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.maps.MapsFragment">
 
     <RelativeLayout
@@ -39,80 +39,97 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scrollbars="none"
-                    android:clipToPadding="true"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_below="@+id/txt">
 
-                    <LinearLayout
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:clipToPadding="true"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        android:elevation="10dp">
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="@string/doctors"
-                        android:background="@drawable/btn_bg"
-                        android:layout_margin="5dp"
-                        android:textStyle="bold"
-                        android:textSize="10sp"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="@string/hospitals"
-                        android:background="@drawable/btn_bg"
-                        android:layout_margin="5dp"
-                        android:textStyle="bold"
-                        android:textSize="10sp"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:background="@drawable/btn_bg"
-                        android:layout_margin="5dp"
-                        android:textStyle="bold"
-                        android:textSize="10sp"
-                        android:text="@string/labs"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:background="@drawable/btn_bg"
-                        android:layout_margin="5dp"
-                        android:textStyle="bold"
-                        android:textSize="10sp"
-                        android:text="@string/parmaciticals"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:background="@drawable/btn_bg"
-                        android:layout_margin="5dp"
-                        android:textStyle="bold"
-                        android:textSize="10sp"
-                        android:text="Medicine"/>
-
-                        <Button
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip"
+                            style="@style/CustomChipStyle"
                             android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:background="@drawable/btn_bg"
-                            android:layout_margin="5dp"
-                            android:textStyle="bold"
-                            android:textSize="10sp"
-                            android:text="@string/medical_shops"/>
+                            android:layout_height="wrap_content"
+                            app:chipCornerRadius="5dp"
+                            app:chipStrokeWidth="1dp"
+                            android:text="Doctor" />
 
-                    </LinearLayout>
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip2"
+                            style="@style/CustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipCornerRadius="5dp"
+                            app:chipStrokeWidth="1dp"
+                            android:text="@string/hospitals" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip3"
+                            style="@style/CustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipCornerRadius="5dp"
+                            app:chipStrokeWidth="1dp"
+                            android:text="@string/labs" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip4"
+                            style="@style/CustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipCornerRadius="5dp"
+                            app:chipStrokeWidth="1dp"
+                            android:text="@string/parmaciticals" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip5"
+                            style="@style/CustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipCornerRadius="5dp"
+                            app:chipStrokeWidth="1dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/medical_shops" />
+
+                    </com.google.android.material.chip.ChipGroup>
 
                 </HorizontalScrollView>
+
+        <ImageButton
+            android:id="@+id/current_location"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon"
+            android:layout_margin="10dp"
+            android:layout_alignTop="@+id/map"
+            android:elevation="5dp"
+            android:layout_alignParentRight="true"
+            />
+
         <fragment
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/Horizontalview"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="57dp"
             android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:layout_marginBottom="20dp"
+            android:elevation="5dp"
+            android:layout_alignBottom="@+id/map"/>
     </RelativeLayout>
 
 </FrameLayout>

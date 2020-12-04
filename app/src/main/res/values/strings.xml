@@ -32,4 +32,12 @@
     <string name="labs">Labs</string>
     <string name="parmaciticals">Parmaciticals</string>
     <string name="medical_shops">Medical Shops</string>
+    <string name="date">30</string>
+    <string name="date1">27</string>
+    <string name="month">OCT</string>
+    <string name="month1">NOV</string>
+    <string name="time1">  <font color = "#000"><b>11.15</b></font>  pm</string>
+    <string name="time2">  <font color = "#000"><b>12.15</b></font>  pm</string>
+    <string name="address">Address: Flat 204, Rajapushpam Palace, Shirdi Sai Road, Seethammadhara, Seethammadhara, Visakhapatnam, Andhra Pradesh 530013</string>
+    <string name="designation">MBBS, MD (MRCP) (FRCP) Raditaion oncologist</string>
 </resources>

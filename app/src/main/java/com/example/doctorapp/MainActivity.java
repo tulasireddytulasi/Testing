@@ -23,7 +23,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, OTPActivity.class));
             }
         });
-
-
     }
 }

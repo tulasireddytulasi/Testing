@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -21,6 +21,16 @@
     <style name="Widget.MyApp.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
 
 <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.MyApp.Chip.Choice</item>-->
+    </style>
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <!-- Customize your theme here. -->
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+        <item name="chipStrokeColor">@color/chip_strock_color</item>
+    </style>
+
+    <style name="button" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@drawable/bt_bg</item>
     </style>
 
 </resources>

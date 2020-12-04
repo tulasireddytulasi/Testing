@@ -22,13 +22,11 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private ImageView imageView, img1, img2, img3;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         imageView = root.findViewById(R.id.profile_pic);
         img1 = root.findViewById(R.id.img1);
-        img2 = root.findViewById(R.id.img2);
         img3 = root.findViewById(R.id.img3);
 
         Glide.with(getContext())
@@ -40,14 +38,8 @@ public class HomeFragment extends Fragment {
                 .into(img1);
 
         Glide.with(getContext())
-                .load(R.drawable.cards5)
-                .into(img2);
-
-        Glide.with(getContext())
                 .load(R.drawable.water)
                 .into(img3);
-
-
 
         return root;
     }

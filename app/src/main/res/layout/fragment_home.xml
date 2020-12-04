@@ -37,12 +37,180 @@
         android:textSize="7sp"
         android:text="@string/upcoming_events"/>
 
-        <ImageView
-            android:id="@+id/img2"
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:src="@drawable/cards5" />
+            android:layout_margin="10dp"
+            android:background="@drawable/relative_bg">
+
+            <LinearLayout
+                android:id="@+id/linearDate"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/linear_bg"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="4dp"
+                    android:textSize="20sp"
+                    android:text="@string/date"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="-5dp"
+                    android:textSize="10sp"
+                    android:text="@string/month"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Karkinos Clinic"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/grey_brown"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@+id/linearDate"/>
+
+            <TextView
+                android:id="@+id/doctor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Jose Kurien"
+                android:layout_marginTop="0dp"
+                android:textSize="13sp"
+                android:textColor="@color/dark_grey"
+                android:layout_below="@+id/name"
+                android:layout_toEndOf="@+id/linearDate"/>
+
+            <TextView
+                android:id="@+id/session"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consultation"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/traffic_grey"
+                android:layout_below="@+id/doctor_name"
+                android:layout_toEndOf="@+id/linearDate"/>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time1"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="13sp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="@color/traffic_grey"
+                android:layout_below="@+id/doctor_name" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/relative_bg1">
+
+            <LinearLayout
+                android:id="@+id/linearDate1"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/linear_bg1"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="4dp"
+                    android:textSize="20sp"
+                    android:text="@string/date1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="-5dp"
+                    android:textSize="10sp"
+                    android:text="@string/month1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tata Memorial Hospital"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/grey_brown"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@+id/linearDate1"/>
+
+            <TextView
+                android:id="@+id/doctor_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Selvi Krishna"
+                android:layout_marginTop="0dp"
+                android:textSize="13sp"
+                android:textColor="@color/dark_grey"
+                android:layout_below="@+id/name1"
+                android:layout_toEndOf="@+id/linearDate1"/>
+
+            <TextView
+                android:id="@+id/session1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chemotherapy Session"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/traffic_grey"
+                android:layout_below="@+id/doctor_name1"
+                android:layout_toEndOf="@+id/linearDate1"/>
+
+            <TextView
+                android:id="@+id/time1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time2"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="13sp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="@color/traffic_grey"
+                android:layout_below="@+id/doctor_name1" />
+
+
+        </RelativeLayout>
 
     <ImageView
         android:id="@+id/img3"
@@ -51,6 +219,8 @@
         android:layout_marginTop="140dp"
         android:layout_gravity="bottom"
         android:src="@drawable/water" />
+
+
 
     </LinearLayout>
 

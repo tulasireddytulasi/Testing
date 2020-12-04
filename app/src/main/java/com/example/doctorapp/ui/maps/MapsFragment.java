@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -34,6 +35,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import java.util.ArrayList;
+
+
 public class MapsFragment extends Fragment {
 
     private GoogleMap mMap;
@@ -41,15 +45,68 @@ public class MapsFragment extends Fragment {
     FusedLocationProviderClient fusedLocationProviderClient;
     private static final int Code = 101;
     private ImageButton current_location;
+    private ArrayList<MapDataModel> dataModel;
+    private ViewPager viewPager;
+    private int no;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
+        current_location = view.findViewById(R.id.current_location);
+        viewPager = view.findViewById(R.id.viewpager);
+        viewPager.setPadding(0, 0, 300, 0);
+        dataModel = new ArrayList<>();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
         GetLocation();
+
+
+        current_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GetLocation();
+            }
+        });
+
+        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+            @Override
+            public void onPageSelected(int position) {
+                no = position;
+                MapDataModel mapDataModel = dataModel.get(position);
+                double lat = mapDataModel.getLat();
+                double log = mapDataModel.getLag();
+                String name1 = mapDataModel.getDoctorname();
+                LatLng latLng = new LatLng(lat, log);
+                CurrentLocation(latLng, name1);
+            }
+        });
+
+        Load_Data();
         return view;
+
+    }
+
+    private void Load_Data() {
+        dataModel.add(new MapDataModel("https://cdn.sanity.io/images/0vv8moc6/hcplive/0ebb6a8f0c2850697532805d09d4ff10e838a74b-200x200.jpg","Dr B Murali Krishna",
+                "Address: Flat 204, Rajapushpam Palace, Shirdi Sai Road, Seethammadhara," +
+                        " Seethammadhara, Visakhapatnam, Andhra Pradesh 530013",17.746224, 83.320373));
+
+        dataModel.add(new MapDataModel("https://st2.depositphotos.com/3889193/7657/i/950/depositphotos_76570869-stock-photo-confident-female-doctor-posing-in.jpg",
+                "Dr. A. Gopal Rao", "Address: HB Colony Rd, Seethammadhara Junction, KRM Colony, Seethammadara, Visakhapatnam, Andhra Pradesh 530013",
+                17.744947, 83.318719));
+
+        dataModel.add(new MapDataModel("https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg",
+                "Dr Chandra Kala Devi", "Address: 50-52-15/21, Seethammadhara, Seethammadhara, Visakhapatnam, Andhra Pradesh 530013",
+                17.745969, 83.327179));
+
+        dataModel.add(new MapDataModel("https://st2.depositphotos.com/3889193/7657/i/950/depositphotos_76570869-stock-photo-confident-female-doctor-posing-in.jpg",
+                "Dr Someshwara Rao N", "Address: HB Colony Rd, Seethammadhara Junction, KRM Colony, Seethammadara, Visakhapatnam, Andhra Pradesh 530013",
+                17.744027, 83.324538));
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getContext(), dataModel);
+        viewPager.setAdapter(viewPagerAdapter);
+
     }
 
     private void GetLocation() {
@@ -68,30 +125,37 @@ public class MapsFragment extends Fragment {
                     currentLocation = location;
                     Toast.makeText(getContext(), "Lat: "+currentLocation.getLatitude()
                             +" Longitude:"+ currentLocation.getLongitude() ,Toast.LENGTH_LONG).show();
-                    SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-                            .findFragmentById(R.id.map);
-                    mapFragment.getMapAsync(new OnMapReadyCallback() {
-                        @Override
-                        public void onMapReady(GoogleMap googleMap) {
-                            LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-                           CurrentLocation(latLng, googleMap);
-                        }
-                    });
+                    LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+                    CurrentLocation(latLng, "I am here...");
+
                 }
             }
         });
     }
 
-    private void CurrentLocation(LatLng latLng, GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
-        int height = 100;
-        int width = 100;
-        Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.marker);
-        Bitmap smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
-        BitmapDescriptor smallMarkerIcon = BitmapDescriptorFactory.fromBitmap(smallMarker);
-        mMap.addMarker(new MarkerOptions().position(latLng).title("I am here...").icon(smallMarkerIcon));
+    private void CurrentLocation(final LatLng latLngs, final String name) {
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+
+                mMap = googleMap;
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLngs));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLngs, 18));
+                int height = 100;
+                int width = 100;
+                Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.marker);
+                Bitmap smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+                BitmapDescriptor smallMarkerIcon = BitmapDescriptorFactory.fromBitmap(smallMarker);
+                mMap.addMarker(new MarkerOptions().position(latLngs).title(name).icon(smallMarkerIcon));
+            }
+        });
+
+        // ====================================
+
+        // ====================================
     }
 
     @Override

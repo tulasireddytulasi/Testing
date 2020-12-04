@@ -10,6 +10,7 @@ import com.example.doctorapp.ui.ChatFragment;
 import com.example.doctorapp.ui.gallery.GalleryFragment;
 import com.example.doctorapp.ui.slideshow.SlideshowFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -56,6 +57,8 @@ public class HomeActivity extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.bottom_nav);
         NavigationUI.setupWithNavController(navView, navController);
+
+       // navView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
 
     }
 
