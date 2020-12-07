@@ -1,22 +1,20 @@
 package com.example.doctorapp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.MenuInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Menu;
+import android.widget.Toast;
 
-import com.example.doctorapp.ui.ChatFragment;
-import com.example.doctorapp.ui.gallery.GalleryFragment;
-import com.example.doctorapp.ui.slideshow.SlideshowFragment;
+import com.example.doctorapp.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomnavigation.LabelVisibilityMode;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -30,6 +28,8 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private SharedPreferences sharedPreferences;
+    Boolean firstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +58,16 @@ public class HomeActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.bottom_nav);
         NavigationUI.setupWithNavController(navView, navController);
 
+       // navView.findViewById(R.id.chat).setVisibility(View.GONE);
        // navView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
-
     }
 
+//    @Override
+//    public void onBackPressed() {
+//        //finish();
+//       // finishAffinity();
+//        moveTaskToBack(true);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

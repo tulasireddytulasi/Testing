@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_below="@id/txt"
-        android:layout_margin="30dp"
+        android:layout_margin="20dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         android:layout_centerHorizontal="true">
@@ -59,12 +59,13 @@
 
 
             <com.chaos.view.PinView
+                android:id="@+id/pinview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:itemCount="4"
-                app:itemWidth="50dp"
-                app:itemHeight="50dp"
-                app:itemSpacing="20dp"
+                app:itemCount="6"
+                app:itemWidth="45dp"
+                app:itemHeight="45dp"
+                app:itemSpacing="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
                 app:lineColor="@color/line"
@@ -84,7 +85,7 @@
 
 
     <TextView
-        android:id="@+id/no"
+        android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/resend"

@@ -6,6 +6,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cards"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_marginTop="10dp"
@@ -27,25 +28,25 @@
 
             <TextView
                 android:id="@+id/doctor_name"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/doc_img"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
+                android:maxLines="2"
                 android:textSize="13sp"
                 android:textColor="@color/black"
                 android:text="Dr. Vijay Nambiar"/>
 
             <TextView
                 android:id="@+id/designation"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/doc_img"
                 android:layout_below="@+id/doctor_name"
                 android:layout_marginStart="10dp"
                 android:maxLines="2"
-                android:textSize="9dp"
-                android:text="@string/designation"/>
+                android:textSize="9dp"/>
 
             <TextView
                 android:id="@+id/address"

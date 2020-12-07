@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DoctorApp</string>
+    <string name="app_name">KARKINOS</string>
     <string name="check">I have read and agree to the <u>privacy policy</u> &amp;
         <u>terms 0f services</u>, including our <u>Cooking Use</u></string>
     <string name="signin">Sign In</string>
@@ -36,8 +36,10 @@
     <string name="date1">27</string>
     <string name="month">OCT</string>
     <string name="month1">NOV</string>
-    <string name="time1">  <font color = "#000"><b>11.15</b></font>  pm</string>
-    <string name="time2">  <font color = "#000"><b>12.15</b></font>  pm</string>
+    <string name="time1">  <font color="#000"><b>11.15</b></font>  pm</string>
+    <string name="time2">  <font color="#000"><b>12.15</b></font>  pm</string>
     <string name="address">Address: Flat 204, Rajapushpam Palace, Shirdi Sai Road, Seethammadhara, Seethammadhara, Visakhapatnam, Andhra Pradesh 530013</string>
     <string name="designation">MBBS, MD (MRCP) (FRCP) Raditaion oncologist</string>
+    <string name="logout">Logout</string>
+    <string name="settings">Settings</string>
 </resources>

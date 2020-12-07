@@ -4,14 +4,24 @@ public class MapDataModel {
     String doctorname;
     String address;
     String pic;
+    String designation;
     double lat;
     double lag;
-    public MapDataModel(String pic, String doctorname, String address, double lat, double lag) {
+    public MapDataModel(String pic, String doctorname, String designation, String address, double lat, double lag) {
         this.pic = pic;
         this.doctorname = doctorname;
         this.address = address;
+        this.designation = designation;
         this.lat = lat;
         this.lag = lag;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
     public String getPic() {

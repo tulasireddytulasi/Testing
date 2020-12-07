@@ -121,12 +121,20 @@
             android:layout_marginBottom="57dp"
             android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpager"
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/viewpager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="130dp"-->
+<!--            android:clipToPadding="false"-->
+<!--            android:overScrollMode="never"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:elevation="5dp"-->
+<!--            android:layout_alignBottom="@+id/map"/>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:clipToPadding="false"
-            android:overScrollMode="never"
             android:layout_marginBottom="20dp"
             android:elevation="5dp"
             android:layout_alignBottom="@+id/map"/>
