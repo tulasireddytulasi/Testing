@@ -47,11 +47,9 @@ public class OTPActivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OTPActivity.this, HomeActivity.class));
                 String code = pinView.getText().toString();
                 if (!code.isEmpty()){
                     VerifyCode(code);
-                   // startActivity(new Intent(OTPActivity.this, HomeActivity.class));
                 }
             }
         });

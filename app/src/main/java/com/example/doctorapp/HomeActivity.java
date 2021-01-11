@@ -7,7 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.doctorapp.ui.ChatFragment;
+import com.example.doctorapp.ui.gallery.GalleryFragment;
 import com.example.doctorapp.ui.home.HomeFragment;
+import com.example.doctorapp.ui.slideshow.SlideshowFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -62,12 +65,29 @@ public class HomeActivity extends AppCompatActivity {
        // navView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        //finish();
-//       // finishAffinity();
-//        moveTaskToBack(true);
-//    }
+    @Override
+    public void onBackPressed() {
+        //finish();
+       // finishAffinity();
+       // moveTaskToBack(true);
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+          //  Toast.makeText(HomeActivity.this, "Home...", Toast.LENGTH_SHORT).show();
+        }else if(count == 1) {
+            super.onBackPressed();
+            //additional code
+            Toast.makeText(HomeActivity.this, "Health...", Toast.LENGTH_SHORT).show();
+        } {
+            getSupportFragmentManager().popBackStack();
+        }
+
+
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

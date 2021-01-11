@@ -18,10 +18,10 @@
     <ImageView
         android:id="@+id/img"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@drawable/name"/>
+        android:src="@drawable/patcon"/>
 
 
     <TextView

@@ -44,6 +44,15 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
+//    @Override
+//    public void onBackPressed() {
+//        //finish();
+//        // finishAffinity();
+//        getActivity().moveTaskToBack(true);
+//    }
+
+
+
     @Override
     public void onPrepareOptionsMenu(@NonNull Menu menu) {
         super.onPrepareOptionsMenu(menu);
